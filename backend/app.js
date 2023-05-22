@@ -209,11 +209,6 @@ app.post(
       let imgPath = req.file
         ? url + "/images/" + req.file.filename
         : url + "/images/avatar.png";
-      // if (req.file) {
-      //   imgPath = req.file.filename;
-      // } else {
-      //   imgPath = null;
-      // }
       let user = new User({
         firstName: req.body.firstName,
         lastName: req.body.lastName,
