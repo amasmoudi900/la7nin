@@ -1,0 +1,34 @@
+<div class="hero overlay" style="background-image: url('assets/images/bg_3.jpg');">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-9 mx-auto text-center">
+                <h1 class="text-white">Search Weather</h1>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="site-section">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <form #searchForm="ngForm" (ngSubmit)="search()">
+                    <div class="form-group">
+                        <input type="text" class="form-control" [(ngModel)]="obj.city" name="city"
+                            placeholder="Insert City">
+                    </div>
+                    <div class="form-group">
+                        <input type="submit" class="btn btn-primary py-3 px-5" value="Search">
+                    </div>
+                </form>
+            </div>
+
+        </div>
+        <div *ngIf="result" class="text-center">
+            <div>Temperature : {{result?.temperature}} °C</div>
+            <div>Humidity : {{result?.humidity}}</div>
+            <div>Pressure : {{result?.pressure}}</div>
+            <div><img [src]="result?.image" *ngIf="result?.image"></div>
+        </div>
+    </div>
+</div>

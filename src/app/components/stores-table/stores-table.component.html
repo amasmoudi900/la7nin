@@ -1,0 +1,18 @@
+<table class="table">
+    <tr>
+        <th>Id</th>
+        <th>Name</th>
+        <th>Address</th>
+        <th>Actions</th>
+    </tr>
+    <tr *ngFor="let store of stores">
+        <td>{{store.id}}</td>
+        <td>{{store.name}}</td>
+        <td>{{store.address}}</td>
+        <td>
+            <button class="btn btn-info">Display</button>
+            <button class="btn btn-warning" (click)="goToEdit(store.id)">Edit</button>
+            <button class="btn btn-danger">Delete</button>
+        </td>
+    </tr>
+</table>
